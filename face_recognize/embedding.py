@@ -44,5 +44,18 @@ class EmbeddingStorage:
 
         return recognized_name
 
+    def add_person(self, name, embeddings):
+        num_items = embeddings.shape[0]
+        if self.embedding is None:
+            self.embedding = embeddings
+        else:
+            self.embedding = np.concatenate([self.embedding,
+                                             embedding], axis=0)
+        if self.meta is None:
+            self.meta = pd.DataFrame()
+
+        for _ in range(num_items):
+            self.meta.append({'name': name}, ignore_index=True)
+
     def __del__(self):
         self.meta.to_csv(self.path_to_metadata)
