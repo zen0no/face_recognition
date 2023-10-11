@@ -57,5 +57,14 @@ class EmbeddingStorage:
         for _ in range(num_items):
             self.meta.append({'name': name}, ignore_index=True)
 
-    def __del__(self):
+    def _serialize(self):
+        if not os.path.exits(self.path_to_metadata):
+            os.makedirs(self.path_to_metadata)
+        if not os.path.exits(self.path_to_metadata):
+            os.makedirs(self.path_to_embedding)
+
         self.meta.to_csv(self.path_to_metadata)
+        np.save(self.path_to_metadata, self.embedding)
+
+    def __del__(self):
+        self._serialize()
