@@ -22,24 +22,20 @@ There is
 Clone this repository to your local machine:
 
 
-'''console
+```console
 
 $ git clone https://github.com/zen0no/face_recognition.git
 
-
-'''
+```
 
 
 Then, create virtual enviroment and install dependecies
 
-'''
-
+```console
 $ python3 -m venv .venv
 $ source ./venv/bin/activate
 $ pip install -r requierements.txt
-
-
-'''
+```
 
 # Usage
 
