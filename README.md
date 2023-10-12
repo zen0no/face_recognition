@@ -1,7 +1,7 @@
 # Face Recignition
 
 Simple face detection and verification system
-
+```
 There is
 .
 ├── face_recognize
@@ -15,7 +15,7 @@ There is
 └── resources
     └── weights
         └── face_encoder.pt
-
+```
 
 # Installation
 
