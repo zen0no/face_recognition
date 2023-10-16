@@ -10,6 +10,9 @@ import torchvision
 
 
 class Recognizer:
+    '''
+        Recognizer class
+    '''
     def __init__(self, path_to_weights=None, device='cpu'):
 
         # TODO detect faces in image
